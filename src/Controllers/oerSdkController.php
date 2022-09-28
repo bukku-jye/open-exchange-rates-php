@@ -7,6 +7,8 @@ use Illuminate\Routing\Controller as BaseController;
 
 class oerSdkController extends BaseController
 {
+    // All the available functions
+
     public function latest(Request $request) {
         $oerSdk = new oerSdk($request->app_id);
         return $oerSdk->base($request->base)
@@ -71,8 +73,8 @@ class oerSdkController extends BaseController
 
     public function usage(Request $request) {
         $oerSdk = new oerSdk($request->app_id);
-        return $oerSdk/* ->app_id($request->app_id)
-            ->prettyprint($request->prettyprint) */
+        return $oerSdk
+            ->prettyprint($request->prettyprint)
             ->usage();
     }
 }
