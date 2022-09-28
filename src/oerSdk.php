@@ -346,7 +346,6 @@ class oerSdk
     public function usage()
     {
         return $this->request('/usage.json', [
-            'app_id' => $this->app_id,
             'prettyprint' => $this->prettyprint,
         ]);
     }
