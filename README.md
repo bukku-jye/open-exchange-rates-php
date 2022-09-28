@@ -36,7 +36,7 @@ Available functions
 * All the API endpoints listed in [https://docs.openexchangerates.org/reference/api-introduction](https://docs.openexchangerates.org/reference/api-introduction) are made available to use
 * Methods can be chained
 * All functions return an object
-* Will abort with the message and status code if there is an error
+* Will throw an exception with the message and status code if there is an error
 
 #### Example: Request latest rates via "latest" endpoint
 ```php
