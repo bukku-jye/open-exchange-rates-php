@@ -1,6 +1,6 @@
 <?php
 
-namespace BukkuAccounting\OpenExchangeRatesSdk;
+namespace BukkuAccounting\OpenExchangeRates;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
