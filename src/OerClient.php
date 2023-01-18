@@ -13,7 +13,7 @@ use GuzzleHttp\Exception\ClientException;
  * @link https://docs.openexchangerates.org/reference/api-introduction
  */
 
-class oerSdk
+class OerClient
 {
     /**
      * API base URL.

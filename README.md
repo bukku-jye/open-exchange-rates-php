@@ -20,15 +20,15 @@ Installation
 
 #### With Composer
 ```php
-composer require bukku-acc/open-exchange-rates-sdk
+composer require bukku-accounting/open-exchange-rates-php
 ```
 
 Getting Started
 -----
 #### Use it as a class
 ```php
-use BukkuAccounting\OpenExchangeRatesSdk\oerSdk;
-$oerSdk = new $oerSdk('YOUR_APP_ID');
+use BukkuAccounting\OpenExchangeRates\OerClient;
+$oerClient = new OerClient('YOUR_APP_ID');
 ```
 
 Available functions
@@ -40,54 +40,54 @@ Available functions
 
 #### Example: Request latest rates via "latest" endpoint
 ```php
-$res = $oerSdk
+$res = $oerClient
     ->base('SGD')
     ->symbols('USD,EUR,GBP')
-    ->latest()
+    ->latest();
 ```
 #### Example: Request historical rates via "historical" endpoint
 ```php
-$res = $oerSdk
+$res = $oerClient
     ->date('2022-01-01')
     ->base('SGD')
     ->symbols('USD,EUR,GBP')
-    ->historical()
+    ->historical();
 ```
 #### Example: Request the list of currency symbols available via "currencies" endpoint
 ```php
-$res = $oerSdk
-    ->currencies()
+$res = $oerClient
+    ->currencies();
 ```
 #### Example: Request historical rates for a given time period via "time_series" endpoint
 ```php
-$res = $oerSdk
+$res = $oerClient
     ->start('2000-01-01')
     ->end('2000-12-31')
     ->base('SGD')
     ->symbols('USD,EUR,GBP')
-    ->time_series()
+    ->time_series();
 ```
 #### Example: Convert any value from one currency to another via "convert" endpoint
 ```php
-$res = $oerSdk
+$res = $oerClient
     ->value(10000)
     ->from('SGD')
     ->to('MYR')
-    ->convert()
+    ->convert();
 ```
 #### Example: Request the historical Open, High Low, Close and Average for a given time period via "ohlc" endpoint
 ```php
-$res = $oerSdk
+$res = $oerClient
     ->start_time('2017-07-17T00:00:00Z')
     ->period('1w')
     ->base('SGD')
     ->symbols('USD,EUR,GBP')
-    ->ohlc()
+    ->ohlc();
 ```
 #### Example: Request the plan information and usage statistics via "usage" endpoint
 ```php
-$res = $oerSdk
-    ->usage()
+$res = $oerClient
+    ->usage();
 ```
 
 Reference API Documentation
